@@ -1,0 +1,63 @@
+page-europe {
+    .toolbar-background-md {
+        background-color: black;
+      }
+      .toolbar-title-md {
+        color: white;
+        font-size: 3.0rem;
+      }
+      .scroll-content {
+        background-color: map-get($colors, light);
+      }
+      .card-header-md {
+        white-space: normal;
+      }
+      .card-content-md {
+        white-space: normal;
+      }
+      .card-md {
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        box-shadow: none;
+        p {
+          font-weight: bold;
+          font-size: 1.5rem;
+        }
+        h2 {
+          float: left;
+          font-size: 1.3rem;
+          color: white;
+          width: 100%;
+          padding: 2px;
+          margin: 0px;
+          background-color: green;
+        }
+        h3 {
+          float: left;
+          font-size: 1.3rem;
+          color: white;
+          width: 100%;
+          padding: 2px;
+          margin: 0px;
+          background-color: black;
+        }
+        h4 {
+          font-weight: bold;
+          color: rgb(41, 243, 41);
+        }
+        h5 {
+          font-weight: bold;
+         
+        }
+        h6 {
+          font-weight: lighter;
+        }
+      }
+      ion-card-header {
+        font-weight: bold;
+      }
+      ion-segment {
+        background-color: black;
+      }
+}

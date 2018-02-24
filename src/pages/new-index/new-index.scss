@@ -1,0 +1,38 @@
+page-new-index {
+  .toolbar-background-md {
+    background-color: black;
+  }
+  .toolbar-title-md {
+    color: white;
+  }
+  .card-md {
+    width: 100%;
+    box-shadow: none;
+    h2 {
+      font-size: 2.7rem;
+    }
+    .vol {
+      // text-align: end;
+      background-color: white;
+      color: black;
+      font-size: 1.5rem;
+    }
+    h3 {
+      background-color: green;
+      color: white;
+      padding: 5px;
+    }
+    h4 {
+      background-color: black;
+      color: white;
+      text-align: end;
+      padding: 5px;
+    }
+    h5 {
+      font-weight: bold;
+    }
+    h6 {
+      font-weight: bold;
+    }
+  }
+}

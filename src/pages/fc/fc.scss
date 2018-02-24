@@ -1,0 +1,29 @@
+page-fc {
+    .toolbar-background-md {
+        background-color: black;
+      }
+      .toolbar-title-md {
+          color: white;
+          font-size: 3.0rem;
+      }
+      .scroll-content {
+        background-color: map-get($colors, light);
+      }
+      .card-header-md {
+          white-space: normal;
+      }
+      .card-content-md {
+          white-space: normal;
+      }
+      ion-card  {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      ion-card-header {
+        font-weight: bold;
+      }
+      ion-segment {
+          background-color: black;
+      }
+}

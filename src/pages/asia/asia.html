@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      QUANDL
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+  <ion-segment [(ngModel)]="segment">
+    <ion-segment-button value="articles">
+      Articles
+    </ion-segment-button>
+    <ion-segment-button value="markets">
+      Markets
+    </ion-segment-button>
+    <ion-segment-button value="watchlist">
+      Watchlist
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content class="home">
+
+  <div [ngSwitch]="segment">
+    <ion-list *ngSwitchCase="'articles'" ngSelected="selected" (click)="onclickMarkets()">
+
+      <ion-card *ngFor="let des of description">
+        <ion-card-header>
+          {{ des.title }}
+        </ion-card-header>
+        <ion-card-content>
+          <img src="{{des.urlToImage}}"> {{ des.description }}
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+    <ion-list *ngSwitchCase="'markets'" ngSelected="selected">
+
+      <ion-card (click)="onclickMarkets()">
+        <ion-card-header>
+          {{ name }}
+        </ion-card-header>
+
+        <ion-card-content>
+          <canvas #lineCanvas></canvas>
+          <p>
+            6 Week High/Low
+          </p>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <h2>
+                  {{ largestvalue }}
+                </h2>
+              </ion-col>
+              <ion-col>
+                <h3>
+                  {{ smallestvalue }}
+                </h3>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-list>
+          <ion-item *ngFor="let n of unshowndata_arr" (click)="onUnknowndata(n)">
+            {{ n.name }}
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <h6>
+                    Vol: {{ n.volume }}
+                  </h6>
+                </ion-col>
+                <ion-col>
+                  <!-- <h4>
+                    {{ n.change }}%
+                  </h4> -->
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'watchlist'" ngSelected="selected">
+      <ion-card text-center>
+        <ion-card-header>Please log in to use the watchlist</ion-card-header>
+        <ion-card-content>
+
+          <h2>Tap the button below to log in</h2>
+          <ion-buttons color="secondary">
+            <button ion-button block>Log in</button>
+          </ion-buttons>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+
+</ion-content>
